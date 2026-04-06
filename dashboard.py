@@ -23,12 +23,12 @@ driver.get("https://mini-bug-tracker-v1.vercel.app/")
 time.sleep(2)
 
 # Input data
-driver.find_element(By.ID, "title").send_keys("Login Bug")
-driver.find_element(By.ID, "description").send_keys("Login button not working")
+driver.find_element(By.ID, "title").send_keys("Front end Bug")
+driver.find_element(By.ID, "description").send_keys("Horizontal navigation bar not working")
 
 # Select severity
 severity_dropdown = Select(driver.find_element(By.ID, "severity"))
-severity_dropdown.select_by_visible_text("High")
+severity_dropdown.select_by_visible_text("Medium")
 
 # Click Add Bug button
 driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
