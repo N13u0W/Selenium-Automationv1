@@ -24,7 +24,7 @@ def test_login_success(driver):
 
     time.sleep(2)
 
-    assert "Login Successful!" in driver.page_source
+    assert "Welcome to Dashboard" in driver.page_source
 
     #invalid login test case
 def test_login_failed(driver):
