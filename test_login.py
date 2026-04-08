@@ -56,7 +56,7 @@ def test_login_empty(driver):
     assert "Please enter username and password!" in driver.page_source
 
     #username only test case
-def test_login_missing_credentials(driver):
+def test_login_missing_credentials1(driver):
 
     # file
     driver.get("https://demo-webv1.vercel.app/")
@@ -70,7 +70,7 @@ def test_login_missing_credentials(driver):
     assert "Please enter password!" in driver.page_source
 
     #password only test case
-def test_login_missing_credentials(driver):
+def test_login_missing_credentials2(driver):
 
     # file
     driver.get("https://demo-webv1.vercel.app/")
