@@ -22,7 +22,12 @@ def test_login_success(driver):
     driver.find_element(By.ID, "password").send_keys("1234")
     driver.find_element(By.XPATH, "//button[text()='Login']").click()
 
-    time.sleep(2)
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//h2[contains(text(),'Dashboard')]"))
+    )
 
     assert "Welcome to Dashboard" in driver.page_source
 
