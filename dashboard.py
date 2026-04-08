@@ -30,6 +30,7 @@ driver.find_element(By.ID, "description").send_keys("Horizontal navigation bar n
 severity_dropdown = Select(driver.find_element(By.ID, "severity"))
 severity_dropdown.select_by_visible_text("Medium")
 
+
 # Click Add Bug button
 driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
 
