@@ -88,4 +88,28 @@ def test_login_missing_credentials2(driver):
 
     assert "Please enter username!" in driver.page_source
 
+    #success login+logout test case
+def test_loginlogout_success(driver):
+
+    # file
+    driver.get("https://demo-webv1.vercel.app/")
+
+    # Input data
+    driver.find_element(By.ID, "username").send_keys("admin")
+    driver.find_element(By.ID, "password").send_keys("1234")
+    driver.find_element(By.XPATH, "//button[text()='Login']").click()
+
+    from selenium.webdriver.support.ui import WebDriverWait
+    from selenium.webdriver.support import expected_conditions as EC
+
+    WebDriverWait(driver, 10).until(
+        EC.presence_of_element_located((By.XPATH, "//h2[contains(text(),'Dashboard')]"))
+    )
+
+    assert "Welcome to Dashboard" in driver.page_source
+    # Logout
+    driver.find_element(By.XPATH, "//button[text()='Logout']").click()
+
+    time .sleep(2)  
+
     driver.quit()           
