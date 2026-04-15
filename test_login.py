@@ -11,6 +11,8 @@ def driver():
     yield driver
     driver.quit()
 
+#run with python -m pytest -v 
+
 #success login test case
 def test_login_success(driver):
 

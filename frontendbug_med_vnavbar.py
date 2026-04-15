@@ -24,7 +24,7 @@ time.sleep(2)
 
 # Input data
 driver.find_element(By.ID, "title").send_keys("Front end Bug")
-driver.find_element(By.ID, "description").send_keys("Horizontal navigation bar not working")
+driver.find_element(By.ID, "description").send_keys("Vertical navigation bar not working")
 
 # Select severity
 severity_dropdown = Select(driver.find_element(By.ID, "severity"))
@@ -39,7 +39,7 @@ time.sleep(2)
 # Verify bug added (check table)
 table = driver.find_element(By.ID, "bugTable").text
 
-if "Login Bug" in table:
+if "Front end Bug" in table:
     print("✅ Bug successfully added!")
 else:
     print("❌ Bug not added!")
